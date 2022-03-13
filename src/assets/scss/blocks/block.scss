@@ -1,0 +1,96 @@
+.block {
+    margin: 20px auto;
+    max-width: 1000px;
+    // display: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 70px;
+}
+
+.block__task {
+    justify-self: stretch;
+    overflow: hidden;
+    background-color: rgb(197, 252, 145);
+    border: 1px solid black;
+    border-radius: 70px;
+    box-shadow: 10px 10px 5px rgb(5, 135, 241);
+    cursor: pointer;
+    &:hover {
+        background-color: rgb(134, 255, 21);
+        transform: translateY(-2px);
+        transition: .2s linear;
+    }
+}
+
+.block__flag {
+    display: block;
+    // margin: 5px auto;
+    max-width: 100%;
+    margin-bottom: 40px;
+    // border: 2px solid red;
+    // border-radius: 10px;
+}
+
+.block__pic {
+    display: flex;
+    justify-content: center;
+    max-height: 300px;
+    overflow: hidden;
+}
+
+.block__robot {
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 15px;
+    .block__robotText {
+        p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0 0 0 48px;
+        }
+    }
+}
+
+.block__img {
+    max-width: 100%;
+    width: 240px;
+}
+
+.block__btn {
+    margin: 20px 0 10px 38px;
+    padding: 10px 25px;
+    background: #FFFFFF;
+    box-shadow: 0px 9px 18px rgba(107, 79, 167, 0.6);
+    border-radius: 29.5px;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 800;
+    font-family: 'Montserrat', sans-serif;
+    &:hover {
+        background-color: rgb(109, 238, 231);
+        transition: .2s linear;
+    }
+    &:active {
+        box-shadow: 0 0 0 2px blue;
+    }
+}
+
+.block__math--btn {
+    margin: 85px 0 10px 38px;
+    padding: 10px 25px;
+    background: #FFFFFF;
+    box-shadow: 0px 9px 18px rgba(107, 79, 167, 0.6);
+    border-radius: 29.5px;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 800;
+    font-family: 'Montserrat', sans-serif;
+    &:hover {
+        background-color: rgb(109, 238, 231);
+        transition: .2s linear;
+    }
+    &:active {
+        box-shadow: 0 0 0 2px blue;
+    }
+}

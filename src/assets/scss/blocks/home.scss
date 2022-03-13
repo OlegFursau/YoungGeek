@@ -1,0 +1,48 @@
+.home {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    margin-bottom: 20px;
+    margin-top: -5px;
+    border-radius: 15px;
+    overflow: hidden;
+    img {
+        justify-self: center;
+        max-width: 100%;
+    }
+}
+
+.home__start {
+    justify-self: center;
+    margin-top: -120px;
+    max-width: 100%;
+    width: 200px;
+}
+
+.home__btn--start {
+    padding: 10px 50px;
+    color: rgb(245, 246, 250);
+    font-size: 24px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Dancing Script';
+    font-weight: 700;
+    background: linear-gradient(90deg, #22b8fd, #6bff5d, #ef3bff, #1b03f4, #22b8fd);
+    background-size: 400%;
+    border-radius: 30px;
+    z-index: 1;
+    animation: animate 5s linear infinite;
+    cursor: pointer;
+    &:active {
+        box-shadow: 0 0 5px blue;
+    }
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 400%;
+    }
+}

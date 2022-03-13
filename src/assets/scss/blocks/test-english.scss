@@ -1,0 +1,186 @@
+.test-english {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    max-width: 100%;
+    width: 1000px;
+    margin: 10px auto;
+    justify-content: center;
+    gap: 20px;
+    background-color: rgba(255, 255, 255, 0.568);
+    padding: 10px 20px;
+    border-radius: 30px;
+}
+
+.test-english__count {
+    grid-column: 1/3;
+    grid-row: 1/2;
+    margin: 10px 0;
+}
+
+.count {
+    text-align: center;
+    font-weight: 400;
+    font-size: 24px;
+    .test-english__answer {
+        border: 1px solid #000;
+        background-color: white;
+        border-radius: 10px;
+        padding: 12px;
+        font-family: 'Montserrat', sans-serif;
+        text-shadow: 1px 3px 4px #3084a8;
+        margin: 0 10px;
+        font-size: 30px;
+        color: rgb(2, 127, 211);
+    }
+    .test-english__mistake {
+        border: 1px solid #000;
+        background-color: white;
+        border-radius: 10px;
+        padding: 12px;
+        font-family: 'Montserrat', sans-serif;
+        text-shadow: 1px 3px 4px #3084a8;
+        margin: 0 10px;
+        font-size: 30px;
+        color: rgb(255, 0, 0);
+    }
+    .test-english__correct {
+        border: 1px solid #000;
+        background-color: white;
+        border-radius: 10px;
+        padding: 12px;
+        font-family: 'Montserrat', sans-serif;
+        text-shadow: 1px 3px 4px #3084a8;
+        margin: 0 10px;
+        font-size: 30px;
+        color: rgb(2, 211, 89);
+    }
+}
+
+.test-english__img {
+    justify-self: center;
+    img {
+        max-width: 100%;
+        width: 400px;
+        justify-self: center;
+    }
+}
+
+.test-english__choose {
+    display: grid;
+    grid-template-rows: repeat(4, 90px);
+    // gap: 10px;
+    margin: 10px 0;
+    background: linear-gradient(40deg, rgb(250, 231, 127), rgb(208, 252, 126));
+    border: 1px solid blue;
+    border-radius: 10px;
+    box-shadow: 0 8px 10px rgb(97, 97, 233);
+    #test1,
+    #test2,
+    #test3,
+    #test4 {
+        display: flex;
+        gap: 30px;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 30px;
+        max-width: 100%;
+        span {
+            max-width: 100%;
+            width: 100%;
+            font-size: 30px;
+            padding: 10px 15px;
+            border: 1px solid #000;
+            cursor: pointer;
+            border-radius: 10px;
+            background: #fff;
+            text-align: center;
+            &:hover {
+                background-color: rgb(130, 231, 238);
+                transition: .2s linear;
+            }
+            &:active {
+                // box-shadow: 0 0 3px 3px blueviolet;
+                border: 2.5px solid rgb(122, 114, 1);
+                transition: .01s linear;
+            }
+        }
+    }
+    svg {
+        width: 50px;
+        margin: 10px;
+        cursor: pointer;
+        border: .5px solid black;
+        border-radius: 50%;
+        padding: 10px;
+        // background: #fff;
+        &:hover {
+            fill: #3002ff;
+            transition: .3s linear;
+        }
+        &:active {
+            border: 2px solid rgb(1, 16, 146);
+            // box-shadow: 0 0 8px blue;
+            transition: .01s linear;
+        }
+    }
+}
+
+.test-block__btn {
+    display: flex;
+    justify-content: center;
+}
+
+.test-finish__btn {
+    margin: 10px auto;
+    text-align: center;
+    color: rgb(255, 251, 251);
+    text-shadow: 5px 5px 4px rgb(255, 241, 241);
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+    width: 250px;
+    height: 60px;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #22e078, #5dbeff, #29bb96, #acf403, #20d873);
+    background-size: 400%;
+    animation: animates 10s linear infinite;
+    &:hover {
+        color: #000;
+        background: rgb(124, 240, 29);
+        transition: .3s linear;
+    }
+    &:active {
+        color: black;
+        box-shadow: 0 0 5px blue;
+        transition: .01s linear;
+    }
+}
+
+@keyframes animates {
+    0% {
+        font-size: 32px;
+        text-shadow: 5px 5px 4px #106d99, ;
+        background-position: 0%;
+    }
+    20% {
+        text-shadow: 5px 5px 4px #104b72;
+        font-size: 26px;
+    }
+    40% {
+        font-size: 22px;
+    }
+    60% {
+        text-shadow: 5px 5px 4px #20a181;
+        font-size: 24px;
+    }
+    80% {
+        text-shadow: 5px 5px 4px #75a504;
+        font-size: 26px;
+    }
+    100% {
+        text-shadow: 5px 5px 4px #176c94;
+        font-size: 32px;
+        background-position: 400%;
+    }
+}

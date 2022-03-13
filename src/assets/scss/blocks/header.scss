@@ -1,0 +1,52 @@
+.header {
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+}
+
+.header__logo {
+    display: flex;
+    max-width: 100%;
+    a {
+        margin-right: -45px;
+    }
+}
+
+a {
+    .header__img {
+        max-width: 250px;
+    }
+    .header__name {
+        font-size: 50px;
+        text-shadow: 4px 6px 4px rgb(100, 96, 96);
+        font-family: 'Ranchers', cursive;
+        color: $colorLogo;
+    }
+}
+
+.header__btn {
+    display: flex;
+    align-self: center;
+    gap: 20px;
+}
+
+.header__button--back {
+    display: flex;
+    align-self: center;
+    a {
+        color: #fff;
+        padding: 10px 60px;
+        border: 1px solid rgb(13, 59, 146);
+        border-radius: 30px;
+        font-size: 24px;
+        font-family: 'Dancing Script';
+        background: crimson;
+        &:hover {
+            background-color: rgb(185, 3, 3);
+        }
+        &:active {
+            box-shadow: 0 0 5px blue;
+            transform: translateY(2px);
+        }
+    }
+}

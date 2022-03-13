@@ -1,0 +1,54 @@
+@import "./blocks/var";
+@import "./blocks/header";
+@import "./blocks/home.scss";
+@import "./blocks/block.scss";
+@import "./blocks/btn.scss";
+@import "./blocks/english.scss";
+@import "./blocks/math.scss";
+@import "./blocks/test-english.scss";
+@import "./blocks/sicssesfinish.scss";
+@import "./blocks/loader.scss";
+@import "./blocks/error404.scss";
+
+/*-----------------------------------------*/
+
+@import "./blocks/media.scss";
+@import "./blocks/footer.scss";
+body {
+    background: linear-gradient(60deg, rgb(97, 66, 236), rgb(113, 215, 247));
+    font-size: 10px;
+    color: #000;
+    // margin: 10px 5px;
+    padding: 5px;
+    min-width: 480px;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+*,
+*::before,
+::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+// main {
+//     max-height: 100%;
+// }
