@@ -34,14 +34,16 @@
     color: rgb(20, 12, 12);
     font-size: 26px;
     cursor: pointer;
+    border: .5px solid black;
     &:hover {
         background: linear-gradient(45deg, rgb(138, 127, 233), rgb(229, 196, 255));
         transition: .8s linear;
         // font-style: italic;
     }
     &:active {
-        transition: .1s linear;
-        box-shadow: 0 0 10px rgba(68, 68, 224, 0.548);
+        border: 1px solid black;
+        box-shadow: 0 0 10px rgba(221, 221, 252, 0.548);
+        transition: .01s linear;
     }
 }
 

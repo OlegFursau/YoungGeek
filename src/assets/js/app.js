@@ -47,7 +47,7 @@
          page.render().then(html => {
              mainBlock.innerHTML = html;
              page.afterRender();
-             console.log(returnArrEnglish());
+
 
          });
 

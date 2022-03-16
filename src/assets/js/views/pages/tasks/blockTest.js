@@ -1,4 +1,3 @@
-import { genereteID } from '../../../helper/utils';
 import Component from '../../component';
 
 class BlockTest extends Component {
