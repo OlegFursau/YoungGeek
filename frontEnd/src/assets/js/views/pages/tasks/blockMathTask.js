@@ -1,15 +1,25 @@
-import { returnArrMath } from '../../../helper/utils';
 import Component from '../../component';
+import Task from '../../../modal/task';
+
 
 class BlockMathTask extends Component {
-    render() {
+    constructor() {
+        super();
+        this.arr;
+    }
+    getResponseServer() {
+        return new Promise(resolve => new Task().getMathArr().then(arrDb => resolve(arrDb)));
+    }
+    render(arrDb) {
+        this.arr = arrDb;
+        let num = this.getRandomNumber();
         return new Promise(resolve => {
             resolve(`
             <div class="math__innerText">
                 <h1>Let's go! Can you coun how much fruits in the pictures?</h1>
                 <div class="math">
                     <div class="math__img">
-                        <img src="./assets/images/fruits/1 orange.jpg" alt="">
+                    <img src=${this.arr[num]} alt=""> 
                     </div>
                     <div class="math_discribe">
                         <div class="math__text">
@@ -25,7 +35,7 @@ class BlockMathTask extends Component {
 
                         </div>
                         <p id="paragraph">
-                           1
+                            ${++num}
                         </p>
                         <button math class="btn__math">I'm complited!!!</button>
                     </div>
@@ -40,18 +50,21 @@ class BlockMathTask extends Component {
 
     showNewTask() {
         let sum = 0;
+        let arr;
+        new Task().getMathArr().then(res => {
+            arr = res;
+        });
         const blockInnerText = document.getElementsByClassName('math__innerText')[0],
             bottonLearned = document.getElementsByClassName('math__innerText')[0].addEventListener('click', (event) => {
                 if (event.target.attributes[0].nodeName === 'math') {
                     sum++
-                    const blockMath = document.getElementsByClassName('math')[0],
-                        arr = returnArrMath();
+                    const blockMath = document.getElementsByClassName('math')[0];
                     let num = this.getRandomNumber();
                     blockMath.remove();
                     blockInnerText.insertAdjacentHTML('beforeend',
                         `<div class="math">
                             <div class="math__img">
-                                ${arr[num]}
+                            <img src=${this.arr[num]} alt="">  
                             </div>
                             <div class="math_discribe">
                                 <div class="math__text">
@@ -71,7 +84,7 @@ class BlockMathTask extends Component {
                                 <button math class="btn__math">I'm complited!!!</button>
                             </div>
                         </div>`);
-                    if (sum === 11) {
+                    if (sum === 10) {
                         this.showCartoon(blockInnerText, blockMath)
                     }
                 };
@@ -83,15 +96,14 @@ class BlockMathTask extends Component {
     }
 
     getRandomNumber() {
-        const arr = returnArrMath(),
-            [min, max] = [0, arr.length];
+        let [min, max] = [0, this.arr.length];
         return Math.floor(Math.random() * (max - min) + min);
     }
 
     addSpeakVoice() {
         const paragraph = document.getElementById('paragraph'),
             message = new SpeechSynthesisUtterance();
-        // message.lang = "ru-RU";
+
         message.text = paragraph.innerText;
         window.speechSynthesis.speak(message);
     }
@@ -117,18 +129,22 @@ class BlockMathTask extends Component {
                     <a  data-name ="back"><img data-name ="back" src="./assets/images/pngegg.png" alt=""></a>
                 </div>
             </div>`);
-        this.checkButtonNomeOrBack();
+        this.checkButtonHomeOrBack();
     }
 
-    checkButtonNomeOrBack() {
+
+
+    checkButtonHomeOrBack() {
         const blockButtonHomeOrBack = document.getElementsByClassName('finish__botton')[0].addEventListener('click', () => {
             switch (event.target.dataset.name) {
                 case 'home':
                     location.hash = '/choose';
+
                     break;
                 case 'back':
                     location.hash = '/choose';
                     location.hash = '/maths';
+
                     break;
             }
         })

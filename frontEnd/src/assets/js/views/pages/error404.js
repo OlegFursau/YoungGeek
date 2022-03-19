@@ -1,11 +1,10 @@
 import Component from '../component';
 
-
 class Error404 extends Component {
+
     render() {
         return new Promise(resolve => {
             resolve(`
-            
             <div class="error__container">
                 <div class="error__error404page">
                     <div class="error__newcharacter404">
@@ -22,7 +21,7 @@ class Error404 extends Component {
                             </div>
                         </div>
                         <div class="error__laptop404">
-                        <div class="error">
+                        <div class="error404">
                             <h1 >Сейчас попробуем исправить ошибку 404</h1>
                         </div>
                         </div>

@@ -1,0 +1,14 @@
+{
+    "database": {
+        "cartoons": "./database/cartoons.json",
+        "english": "./database/english.json",
+        "math": "./database/math.json"
+    },
+
+    "routes": {
+        "math": "./routes/math.js",
+        "english": "./routes/english.js",
+        "cartoons": "./routes/cartoons.js"
+    }
+
+}

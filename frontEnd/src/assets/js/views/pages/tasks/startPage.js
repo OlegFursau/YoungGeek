@@ -42,11 +42,11 @@ class StartPage extends Component {
                 </div>
             </div>
             `)
-        })
+        });
 
     }
     afterRender() {
-        this.addListeren()
+        this.addListeren();
     }
 
     addListeren() {
@@ -59,8 +59,8 @@ class StartPage extends Component {
                 case 2:
                     location.hash = '/maths';
                     break;
-            }
-        })
+            };
+        });
     }
 
 

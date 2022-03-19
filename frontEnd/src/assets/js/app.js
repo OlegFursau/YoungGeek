@@ -8,9 +8,7 @@
  import BlockMathTask from './views/pages/tasks/blockMathTask';
  import BlockTest from './views/pages/tasks/blockTest';
  import Footer from './views/patrials/footer';
- import { returnArrEnglish } from './helper/utils'
-
-
+ import Task from './modal/task';
 
  window.addEventListener('DOMContentLoaded', () => {
 
@@ -34,31 +32,33 @@
              parsedURL = `${request.resourse||''}`,
              page = Routes[parsedURL] ? new Routes[parsedURL]() : new Error404();
 
-
          header.render().then(html => {
-             headerBlock.innerHTML = html
-             header.afterRender()
+             headerBlock.innerHTML = html;
+             header.afterRender();
          });
 
          footer.render().then(html => footerBlock.innerHTML = html);
 
-
          //!body
-         page.render().then(html => {
-             mainBlock.innerHTML = html;
-             page.afterRender();
 
 
-         });
+
+         page.getResponseServer().then(response => {
+             page.render(response).then(html => {
+                 mainBlock.innerHTML = html;
+                 page.afterRender();
+             });
+         })
+
+
+
 
      }
 
-     location.hash == '' ?
-         window.addEventListener('load', () => {
-             setTimeout(router, 1)
+     location.hash == '' ? window.addEventListener('load', () => {
+             setTimeout(router, 9500)
          }) :
          window.addEventListener('load', router);
-
 
      window.addEventListener('hashchange', router);
 

@@ -28,14 +28,26 @@
     }
     .finish__picture {
         margin: 0 auto;
-        max-width: 50%;
+        display: flex;
+        justify-content: center;
+        iframe {
+            margin: 0 auto;
+            max-width: 100%;
+            width: 400px;
+            max-height: 100%;
+            height: 250px;
+        }
+        img {
+            width: 200px;
+        }
+        // max-width: 50%;
     }
 }
 
 .finish__botton {
     display: flex;
     justify-content: space-evenly;
-    margin: 10px auto;
+    margin: 0 auto 10px;
     a {
         max-width: 100%;
         display: flex;

@@ -1,0 +1,137 @@
+[{
+        "word": "water",
+        "translater": "вода",
+        "picture": "./assets/images/englishPictures/water.jpg"
+
+    },
+    {
+        "word": "tree",
+        "translater": "дерево",
+        "picture": "./assets/images/englishPictures/tree.png"
+    }, {
+        "word": "sea",
+        "translater": "море",
+        "picture": "./assets/images/englishPictures/sea.jpg"
+    }, {
+        "word": "rock",
+        "translater": "скала",
+        "picture": "./assets/images/englishPictures/rock.jpg"
+    }, {
+        "word": "plant",
+        "translater": "растение",
+        "picture": "./assets/images/englishPictures/plant.jpg"
+    }, {
+        "word": "flower",
+        "translater": "цветок",
+        "picture": "./assets/images/englishPictures/flower.jpg"
+    }, {
+        "word": "forest",
+        "translater": "лес",
+        "picture": "./assets/images/englishPictures/forest.jpg"
+    }, {
+        "word": "person",
+        "translater": "человек",
+        "picture": "./assets/images/englishPictures/person.jpg"
+    },
+    {
+        "word": "morning",
+        "translater": "утро",
+        "picture": "./assets/images/englishPictures/morning.jpg"
+    },
+    {
+        "word": "evening",
+        "translater": "вечер",
+        "picture": "./assets/images/englishPictures/evning.jpg"
+    },
+    {
+        "word": "elefant",
+        "translater": "слон",
+        "picture": "./assets/images/englishPictures/elephant.jpg"
+    },
+    {
+        "word": "planet",
+        "translater": "планета",
+        "picture": "./assets/images/englishPictures/planet.jpg"
+    },
+    {
+        "word": "house",
+        "translater": "дом",
+        "picture": "./assets/images/englishPictures/house.jpg"
+    },
+    {
+        "word": "fire",
+        "translater": "огонь",
+        "picture": "./assets/images/englishPictures/fire.jpg"
+    },
+    {
+        "word": "animal",
+        "translater": "животное",
+        "picture": "./assets/images/englishPictures/animals.jpg"
+    },
+    {
+        "word": "bird",
+        "translater": "птица",
+        "picture": "./assets/images/englishPictures/bird.jpg"
+    },
+    {
+        "word": "fish",
+        "translater": "рыба",
+        "picture": "./assets/images/englishPictures/fish.jpg"
+    },
+
+    {
+        "word": "girl",
+        "translater": "девочка",
+        "picture": "./assets/images/englishPictures/girl.jpg"
+    },
+    {
+        "word": "people",
+        "translater": "люди",
+        "picture": "./assets/images/englishPictures/people.jpg"
+    },
+    {
+        "word": "phone",
+        "translater": "телефон",
+        "picture": "./assets/images/englishPictures/phone.jpg"
+    },
+
+    {
+        "word": "ticket",
+        "translater": "билет",
+        "picture": "./assets/images/englishPictures/ticket.jpg"
+    },
+    {
+        "word": "map",
+        "translater": "карта",
+        "picture": "./assets/images/englishPictures/map.jpg"
+    },
+
+    {
+        "word": "wallet",
+        "translater": "кошелек",
+        "picture": "./assets/images/englishPictures/wallet.jpg"
+    },
+
+    {
+        "word": "bag",
+        "translater": "сумка",
+        "picture": "./assets/images/englishPictures/bag.jpg"
+    },
+    {
+        "word": "hospital",
+        "translater": "больница",
+        "picture": "./assets/images/englishPictures/hospital-1.jpg"
+    },
+    {
+        "word": "question",
+        "translater": "вопрос",
+        "picture": "./assets/images/englishPictures/Question1.jpg"
+    },
+
+    {
+        "word": "dog",
+        "translater": "собака",
+        "picture": "./assets/images/englishPictures/dog.jpg"
+    }
+
+]

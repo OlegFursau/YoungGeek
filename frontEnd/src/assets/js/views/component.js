@@ -6,6 +6,10 @@ class Component {
         this.request = parseRequestURL();
     }
 
+    getResponseServer() {
+        return new Promise(resolve => resolve());
+    }
+
     afterRender() {}
 
 }
