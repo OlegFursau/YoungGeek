@@ -47,7 +47,7 @@
 
 @media(max-width: 825px) {
     .header__button--back {
-        display: none;
+        // display: none;
     }
     .block {
         grid-template-columns: 1fr;
@@ -62,11 +62,6 @@
     }
     .header__img {
         display: none;
-    }
-    .header__name {
-        font-size: 20px;
-        padding: 5px;
-        border-radius: 10px;
     }
     .test-english {
         width: 600px;
@@ -119,6 +114,15 @@
 }
 
 @media(max-width: 740px) {
+    .header__btn {
+        gap: 10px;
+    }
+    a {
+        .header__name {
+            font-size: 30px;
+            padding: 5px;
+        }
+    }
     .math {
         grid-template-columns: 1fr;
         // margin-bottom: 320px;

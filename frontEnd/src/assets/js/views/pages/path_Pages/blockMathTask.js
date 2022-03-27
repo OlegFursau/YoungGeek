@@ -1,17 +1,17 @@
 import Component from '../../component';
-import Task from '../../../modal/task';
-
+import Task from '../../../model/task';
 
 class BlockMathTask extends Component {
     constructor() {
         super();
-        this.arr;
+        this.arr = 0;
     }
+
     getResponseServer() {
-        return new Promise(resolve => new Task().getMathArr().then(arrDb => resolve(arrDb)));
+        return new Promise(resolve => new Task().getMathArr().then(arrDb => resolve(this.arr = arrDb)));
     }
-    render(arrDb) {
-        this.arr = arrDb;
+
+    render() {
         let num = this.getRandomNumber();
         return new Promise(resolve => {
             resolve(`
@@ -44,27 +44,24 @@ class BlockMathTask extends Component {
             `);
         });
     }
+
     afterRender() {
         this.showNewTask();
     }
 
     showNewTask() {
         let sum = 0;
-        let arr;
-        new Task().getMathArr().then(res => {
-            arr = res;
-        });
-        const blockInnerText = document.getElementsByClassName('math__innerText')[0],
-            bottonLearned = document.getElementsByClassName('math__innerText')[0].addEventListener('click', (event) => {
-                if (event.target.attributes[0].nodeName === 'math') {
-                    sum++
-                    const blockMath = document.getElementsByClassName('math')[0];
-                    let num = this.getRandomNumber();
-                    blockMath.remove();
-                    blockInnerText.insertAdjacentHTML('beforeend',
-                        `<div class="math">
+        document.getElementById('001').addEventListener('click', (event) => {
+            const blockInnerText = document.getElementsByClassName('math__innerText')[0];
+            if (event.target.attributes[0].nodeName === 'math') {
+                sum++
+                const blockMath = document.getElementsByClassName('math')[0];
+                let num = this.getRandomNumber();
+                blockMath.remove();
+                blockInnerText.insertAdjacentHTML('beforeend',
+                    `<div class="math">
                             <div class="math__img">
-                            <img src=${this.arr[num]} alt="">  
+                                <img src=${this.arr[num]} alt="">  
                             </div>
                             <div class="math_discribe">
                                 <div class="math__text">
@@ -83,16 +80,17 @@ class BlockMathTask extends Component {
                                 </p>
                                 <button math class="btn__math">I'm complited!!!</button>
                             </div>
-                        </div>`);
-                    if (sum === 10) {
-                        this.showCartoon(blockInnerText, blockMath)
-                    }
-                };
-                if (event.target.dataset.name === 'Layer') {
-                    this.addSpeakVoice();
-                };
-
-            });
+                    </div>`);
+                if (sum === 10) {
+                    localStorage.setItem('page', JSON.stringify(document.getElementById('001').innerHTML))
+                    this.showFinishPage(blockInnerText, blockMath);
+                    sum = 0;
+                }
+            };
+            if (event.target.dataset.name === 'Layer') {
+                this.addSpeakVoice();
+            };
+        });
     }
 
     getRandomNumber() {
@@ -101,14 +99,12 @@ class BlockMathTask extends Component {
     }
 
     addSpeakVoice() {
-        const paragraph = document.getElementById('paragraph'),
-            message = new SpeechSynthesisUtterance();
-
-        message.text = paragraph.innerText;
+        const message = new SpeechSynthesisUtterance();
+        message.text = document.getElementById('paragraph').innerText;
         window.speechSynthesis.speak(message);
     }
 
-    showCartoon(blockInnerText) {
+    showFinishPage(blockInnerText) {
         const mainBlock = document.getElementById('001');
         blockInnerText.remove();
         mainBlock.insertAdjacentHTML('beforeend',
@@ -132,22 +128,18 @@ class BlockMathTask extends Component {
         this.checkButtonHomeOrBack();
     }
 
-
-
     checkButtonHomeOrBack() {
-        const blockButtonHomeOrBack = document.getElementsByClassName('finish__botton')[0].addEventListener('click', () => {
+        document.getElementsByClassName('finish__botton')[0].addEventListener('click', () => {
             switch (event.target.dataset.name) {
                 case 'home':
                     location.hash = '/choose';
-
                     break;
                 case 'back':
-                    location.hash = '/choose';
-                    location.hash = '/maths';
-
+                    document.getElementById('001').innerHTML = JSON.parse(localStorage.getItem('page'));
+                    localStorage.clear();
                     break;
             }
-        })
+        });
     }
 }
 export default BlockMathTask;

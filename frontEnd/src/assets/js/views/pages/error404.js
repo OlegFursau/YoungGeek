@@ -1,7 +1,5 @@
 import Component from '../component';
-
 class Error404 extends Component {
-
     render() {
         return new Promise(resolve => {
             resolve(`
@@ -31,6 +29,6 @@ class Error404 extends Component {
             `)
         })
     }
-    afterRender() {}
+
 }
 export default Error404;
