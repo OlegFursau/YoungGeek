@@ -2,7 +2,6 @@ import Component from '../../component';
 class Home extends Component {
     render() {
         return new Promise(resolve => {
-            // this.addSpeakVoice()
             resolve(`
             <div class="home">
                 <img src="./assets/images/Frame 2.jpg" alt="">
@@ -13,11 +12,8 @@ class Home extends Component {
         });
     }
     afterRender() {
-        this.addListener();
-
-    }
-    addSpeakText() {
         this.addSpeakVoice();
+        this.addListener();
     }
 
     addSpeakVoice() {
@@ -35,7 +31,4 @@ class Home extends Component {
         });;
     }
 }
-
-
-
 export default Home;

@@ -42,12 +42,10 @@
                  page.afterRender();
 
              });
-             page.addSpeakText();
+
          });
 
      }
-
-
      location.hash == '' ? window.addEventListener('load', () => {
              setTimeout(router, 9500)
          }) :
