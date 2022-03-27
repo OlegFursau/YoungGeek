@@ -32,6 +32,7 @@
          header.render().then(html => {
              headerBlock.innerHTML = html;
              header.afterRender();
+
          });
 
          footer.render().then(html => footerBlock.innerHTML = html);
@@ -39,9 +40,13 @@
              page.render(response).then(html => {
                  mainBlock.innerHTML = html;
                  page.afterRender();
+
              });
-         })
+             page.addSpeakText();
+         });
+
      }
+
 
      location.hash == '' ? window.addEventListener('load', () => {
              setTimeout(router, 9500)
