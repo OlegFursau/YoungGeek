@@ -12,6 +12,7 @@ class Component {
 
     afterRender() {}
 
+
 }
 
 export default Component;

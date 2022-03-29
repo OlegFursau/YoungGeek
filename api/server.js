@@ -1,7 +1,6 @@
 const express = require('express'),
     bodyParser = require('body-parser'),
     morgan = require('morgan'),
-    http = require('http'),
     config = require('config'),
     app = express();
 

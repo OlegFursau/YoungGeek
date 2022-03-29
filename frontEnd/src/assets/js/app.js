@@ -31,7 +31,6 @@
 
          header.render().then(html => {
              headerBlock.innerHTML = html;
-             header.afterRender();
 
          });
 
@@ -40,17 +39,14 @@
              page.render(response).then(html => {
                  mainBlock.innerHTML = html;
                  page.afterRender();
-
              });
-
          });
-
      }
+
      location.hash == '' ? window.addEventListener('load', () => {
              setTimeout(router, 9500)
          }) :
          window.addEventListener('load', router);
-
      window.addEventListener('hashchange', router);
 
  });

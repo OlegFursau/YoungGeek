@@ -13,10 +13,7 @@ class BlockTaskEnglish extends Component {
 
     render() {
         return new Promise(resolve => {
-            let firstWord = this.getRandomNumber(),
-                secondWord = this.getRandomNumber(),
-                threeWord = this.getRandomNumber(),
-                fourWord = this.getRandomNumber();
+            let [firstWord, secondWord, threeWord, fourWord] = this.generateAnswerRandomNumber();
             resolve(`
             <div id="mainEnglish">
                 <div class="english">
@@ -104,7 +101,6 @@ class BlockTaskEnglish extends Component {
             </div>
             `);
         });
-
     }
 
     afterRender() {
@@ -146,10 +142,7 @@ class BlockTaskEnglish extends Component {
     }
 
     renderNextPage() {
-        let firstWord = this.getRandomNumber(),
-            secondWord = this.getRandomNumber(),
-            threeWord = this.getRandomNumber(),
-            fourWord = this.getRandomNumber();
+        let [firstWord, secondWord, threeWord, fourWord] = this.generateAnswerRandomNumber();
         const englishBlock = document.getElementsByClassName('english')[0],
             blockMainEnglish = document.getElementById('mainEnglish'),
             blockBtn = document.getElementsByClassName('btn-block__english')[0];
@@ -245,9 +238,20 @@ class BlockTaskEnglish extends Component {
         window.speechSynthesis.speak(message);
     }
 
-    getRandomNumber() {
-        let [min, max] = [0, this.arr.length];
-        return Math.floor(Math.random() * (max - min) + min);
+    generateAnswerRandomNumber() {
+        let totalNumbers = this.arr.length,
+            arrayTotalNumbers = [],
+            arrayRandomNumbers = [],
+            tempRandomNumber;
+        while (totalNumbers--) {
+            arrayTotalNumbers.push(totalNumbers + 0);
+        }
+        while (arrayTotalNumbers.length) {
+            tempRandomNumber = Math.round(Math.random() * (arrayTotalNumbers.length - 1));
+            arrayRandomNumbers.push(arrayTotalNumbers[tempRandomNumber]);
+            arrayTotalNumbers.splice(tempRandomNumber, 1);
+        }
+        return arrayRandomNumbers;
     }
 
     renderFinishPage() {

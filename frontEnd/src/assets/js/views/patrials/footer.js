@@ -1,6 +1,4 @@
-import Component from "../component";
-
-class Footer extends Component {
+class Footer {
     render() {
         return new Promise(resolve => {
             resolve(`

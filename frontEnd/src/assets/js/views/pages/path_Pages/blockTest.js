@@ -29,17 +29,19 @@ class BlockTest extends Component {
         for (let i = min; i < max; i++) {;
             this.taskArr.push(this.arr[Math.floor(Math.random() * this.arr.length)])
         }
+
         return this.taskArr;
 
 
     }
+
     getRandomNumber() {
         return Math.floor(Math.random() * 4);
     }
 
 
     generateAnswerRandomNumber() {
-        let totalNumbers = 3 - 0 + 1,
+        let totalNumbers = 4,
             arrayTotalNumbers = [],
             arrayRandomNumbers = [],
             tempRandomNumber;
@@ -133,7 +135,7 @@ class BlockTest extends Component {
     }
 
     addEventListner() {
-        document.getElementById('test-english').addEventListener('click', () => {
+        document.getElementById('001').addEventListener('click', () => {
             let checkWord = this.taskArr[this.random].word;
             switch (true) {
                 case event.target.dataset.name === 'Layer1':
@@ -167,7 +169,6 @@ class BlockTest extends Component {
                         event.target.classList.add('correct');
                         this.answer++;
                         this.correct++;
-
                     } else {
                         this.disableBtn();
                         event.target.classList.add('error');
@@ -324,7 +325,7 @@ class BlockTest extends Component {
                         </div>
                     </div>
                 </div>`;
-        };
+        }
     }
 }
 

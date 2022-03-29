@@ -1,5 +1,4 @@
-import Component from "../component";
-class Header extends Component {
+class Header {
     render() {
             return new Promise(resolve => {
                         resolve(`
